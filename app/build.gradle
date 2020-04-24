@@ -32,6 +32,12 @@ android {
         }
     }
 
+    sourceSets {
+        androidTest{
+            java.srcDir file('src/androidTest/java')
+        }
+    }
+
     flavorDimensions "default"
 
     productFlavors {

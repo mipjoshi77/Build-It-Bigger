@@ -21,7 +21,7 @@ public class JokeActivity extends AppCompatActivity {
         setContentView(view);
 
         Intent dataReceivedFromJavaLibrary = getIntent();
-        jokeResult = dataReceivedFromJavaLibrary.getStringExtra("JOKE_PROVIDER_DATA");
+        jokeResult = dataReceivedFromJavaLibrary.getStringExtra(getResources().getString(R.string.intent_joke_data));
 
         binding.displayJokeTextView.setText(jokeResult);
     }

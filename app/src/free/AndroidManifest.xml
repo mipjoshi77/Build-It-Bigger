@@ -23,7 +23,7 @@
         <!-- You will need to add your AdMob App ID for android:value -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-6698406521770191~6652753979"/>
+            android:value="ca-app-pub-xxxxxxxxxxxxxxxx~yyyyyyyyyy"/>
     </application>
 
 </manifest>

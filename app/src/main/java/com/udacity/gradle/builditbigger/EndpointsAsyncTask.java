@@ -3,7 +3,7 @@ package com.udacity.gradle.builditbigger;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.widget.Toast;
+import android.util.Log;
 
 import com.example.jokedisplay.JokeActivity;
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -41,6 +41,7 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
         context = params[0];
 
         try {
+            Log.d("MAVERICK", "doInBackground: original: joke string length - " +myApiService.tellJoke().toString().length());
             return myApiService.tellJoke().execute().getData();
         } catch (IOException e) {
             return e.getMessage();
@@ -52,7 +53,7 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
 //        super.onPostExecute(s);
 //        Toast.makeText(context, result, Toast.LENGTH_SHORT).show();
         Intent intentToStartAndroidJokeActivity = new Intent(context, JokeActivity.class);
-        intentToStartAndroidJokeActivity.putExtra("JOKE_PROVIDER_DATA", result);
+        intentToStartAndroidJokeActivity.putExtra(context.getResources().getString(R.string.intent_joke_data), result);
         context.startActivity(intentToStartAndroidJokeActivity);
     }
 }
